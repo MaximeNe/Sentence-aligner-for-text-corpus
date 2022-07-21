@@ -15,7 +15,9 @@ jobs:
     - run: zip -r run.zip dist/run
   
   save_app:
-    - uses: actions/upload-artifact@v3
-    with:
-      name: app
-      path: run.zip
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/upload-artifact@v3
+      with:
+        name: app
+        path: run.zip
