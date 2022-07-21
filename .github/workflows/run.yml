@@ -1,0 +1,14 @@
+name: deploy app
+on: [push]
+jobs:
+  deploy_app:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - run: pip install xlrd==1.2.0
+    - run: pip install xlwt
+    - run: pip install -U pyinstaller
+    - run: pyinstaller run.py

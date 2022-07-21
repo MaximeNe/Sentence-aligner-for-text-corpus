@@ -4,7 +4,6 @@
 #   Licence: GNU LESSER GENERAL PUBLIC LICENSE                                #
 ###############################################################################
 
-from warnings import catch_warnings
 import xlrd
 import xlwt
 from os import system
@@ -22,13 +21,13 @@ try:
     data_fr = read_txt(FR_FILENAME)
     print("found FR source file")
 except FileNotFoundError:
-    print("File not found: {}".format(FR_FILENAME))
+    print("File not found: {}. Please, place your french source sentences in this file".format(FR_FILENAME))
     exit(1)
 try:
     data_nb = read_txt(NB_FILENAME)
     print("found NB target file")
 except FileNotFoundError:
-    print("File not found: {}".format(NB_FILENAME))
+    print("File not found: {}. Please, place your non binary french target sentences in this file".format(NB_FILENAME))
     exit(1)
 
 words_fr = set()
