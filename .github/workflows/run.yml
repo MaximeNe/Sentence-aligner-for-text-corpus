@@ -12,3 +12,10 @@ jobs:
     - run: pip install xlwt
     - run: pip install -U pyinstaller
     - run: pyinstaller run.py
+    - run: zip -r run.zip dist/run
+  
+  save_app:
+    - uses: actions/upload-artifact@v3
+    with:
+      name: app
+      path: run.zip
