@@ -11,7 +11,7 @@ jobs:
     - run: pip install xlrd==1.2.0
     - run: pip install xlwt
     - run: pip install -U pyinstaller
-    - run: pyinstaller run.py
+    - run: pyinstaller -y run.py
     - run: zip -r run.zip dist/run
     - uses: actions/upload-artifact@v3
       with:
